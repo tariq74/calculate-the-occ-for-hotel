@@ -1,0 +1,25 @@
+#include "pch.h"
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	//roomocc=room occupied ,troom=total room,troom_occ=total room occupied,troom_unocc=total room unoccupied
+	double rooms = 0, roomocc = 0, troom_occ = 0;
+	double troom_unocc , troom =0 ;
+    double floor=0;
+	double total=0;
+	cout << "enter the number of floor\n";
+	cin >> floor;
+	
+	//this loop to ask rooms in each of the floor and to calculate total room unoccupied
+	for (int a = 1; a <= floor; a++) {
+		cout << "enter the number of the room for floor " << a<<" and rooms that occupied\n";
+		cin >> rooms >> roomocc;
+		troom += rooms;
+		troom_occ += roomocc;
+		troom_unocc = troom - troom_occ;
+	}
+	 double percentage = (troom_occ / troom)*100;
+	cout << "percentage of the room occupied:" <<setprecision(4)<< percentage << "\nTotal room the hotel have:" << troom << "\nThe number of room that occupied :" << troom_occ << "\nThe number of the room that unoccupied:" << troom_unocc;
+}
